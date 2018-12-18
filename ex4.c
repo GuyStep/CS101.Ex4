@@ -43,17 +43,17 @@ int aliceNext(int, int, int);
 int bobNext(int, int);
 
 /************************************************************************
-* function name: void main												*
-* The Input: none														*
-* The output: none (void)												*
-* The Function operation: Main function that calls the independent		*
-*						missions according to the user input.			*
-*						Runs again as long as users input is valid		*
-*						and represents a mission number:				*	
-*						mission1: They live in us						*
-*						mission2: Hero to zero							*
-*						xorWizard: Wizard of XOR							*
-*						Mission5: Rock, Paper, Scissors (Lizard, Spock)	*
+* function name: void main						*
+* The Input: none							*
+* The output: none (void)						*
+* The Function operation: Main function that calls the independent	*
+*			missions according to the user input.		*
+*			Runs again as long as users input is valid	*
+*			and represents a mission number:		*	
+*			mission1: They live in us			*
+*			mission2: Hero to zero				*
+*			xorWizard: Wizard of XOR			*
+*			Mission5: Rock, Paper, Scissors (Lizard, Spock)	*
 *************************************************************************/
 void main() {
 	int mission;
@@ -85,13 +85,13 @@ void main() {
 }
 
 /************************************************************************
-* function name: void mission1											*
-* The Input: none														*
-* The output: none (void), prints only									*
+* function name: void mission1						*
+* The Input: none							*
+* The output: none (void), prints only					*
 * The Function operation: Recieves pairs of numbers from user (through  *
-*						  scanf) and counts in how many of the pairs	*
-*                         the small num is contained in the bigger one.	*
-*							Uses contain(int,int) function.				*
+*			 scanf) and counts in how many of the pairs	*
+*                        the small num is contained in the bigger one.	*
+*			Uses contain(int,int) function.			*
 *************************************************************************/
 void mission1() {
 	//Variables declaration & initialization after previous mission run
@@ -110,11 +110,11 @@ void mission1() {
 	return;
 }
 /************************************************************************
-* function name: contain												*
+* function name: contain						*
 * The Input: int bigNum, int smallNum (the numbers were given by user)	*
-* The output: 1/0 (1-contains, 2-Doesn't contain)						*
+* The output: 1/0 (1-contains, 2-Doesn't contain)			*
 * The Function operation: checks if the smallNum contained in bigNum,   *
-*						  returns 1 if contained, 0 if not.			    *
+*			  returns 1 if contained, 0 if not.		*
 *************************************************************************/
 int contain(bigNum, smallNum) {
 	int modulu = 1;
@@ -139,14 +139,14 @@ int contain(bigNum, smallNum) {
 	return 0;
 }
 /************************************************************************
-* function name: void mission2											*
-* The Input: none														*
-* The output: none (void), prints only									*
-* The Function operation: Recieves a number from user (through			*
-*						  scanf), counts how many steps it takes to		*
-*						  reach zero using:								*
-*						  (number-1) and (number/lowest divider).		*
-*							Uses printToZero(int) function.				*
+* function name: void mission2						*
+* The Input: none							*
+* The output: none (void), prints only					*
+* The Function operation: Recieves a number from user (through		*
+*			  scanf), counts how many steps it takes to	*
+*			  reach zero using:				*
+*			(number-1) and (number/lowest divider).		*
+*			Uses printToZero(int) function.			*
 *************************************************************************/
 void mission2() {
 	//Second mission variables
@@ -157,13 +157,13 @@ void mission2() {
 	printf("The minimum number of moves is %d\n", printToZero(number));
 }
 /************************************************************************
-* function name: stepsToZero											*
+* function name: stepsToZero						*
 * The Input: int number (the number from which we find the way to zero )*
-* The output: int Shortest number of steps to reach 0					*
-* The Function operation: Recursive, counts and returns the minimal		*
-*						  number of steps	to reach zero.				*
-*					   	  Calls to "stepsToZero" to find how many steps.*
-*							Uses lowDivider(int,int) function			*
+* The output: int Shortest number of steps to reach 0			*
+* The Function operation: Recursive, counts and returns the minimal	*
+*			 number of steps to reach zero.			*
+*			 Calls to "stepsToZero" to find how many steps.	*
+*		  	 Uses lowDivider(int,int) function		*
 *************************************************************************/
 int stepsToZero(number) {
 	int divider, steps1 = 0, steps2 = 0;
@@ -184,14 +184,14 @@ int stepsToZero(number) {
 	return 1 + stepsToZero(number - 1);
 }
 /************************************************************************
-* function name: printToZero											*
+* function name: printToZero						*
 * The Input: int number	(the number from which we print the way to zero)*
-* The output: int Shortest number of steps to reach 0					*
+* The output: int Shortest number of steps to reach 0			*
 * The Function operation: Recursive, checks and prints all steps to zero*
-*						that takes to reach 0 using two operatrions:	*
-*						decrease by 1, divide by lowest divider.		*
-*						counts how  many steps and returns it.			*
-*						Uses stepsToZero(int), lowDivider(int,int) funcs*
+*			that takes to reach 0 using two operatrions:	*
+*			decrease by 1, divide by lowest divider.	*
+*			counts how  many steps and returns it.		*
+*			Uses stepsToZero(int), lowDivider(int,int) funcs*
 *************************************************************************/
 int printToZero(number) {
 	int divider, steps1 = 0, steps2 = 0;
@@ -216,12 +216,12 @@ int printToZero(number) {
 	return 1 + printToZero(number - 1);
 }
 /************************************************************************
-* function name: lowDivider												*
-* The Input: int number (from which we find the way to zero),			*
-*			 int divider (number we check as the lowest divider)		*
-* The output: int lowest divider of "number"							*
+* function name: lowDivider						*
+* The Input: int number (from which we find the way to zero),		*
+*		int divider (number we check as the lowest divider)	*
+* The output: int lowest divider of "number"				*
 * The Function operation: Recursive, finds the lowest divider of the	* 
-*						  inputed number and returns it					*
+*		 inputed number and returns it				*
 *************************************************************************/
 int lowDivider(number, divider) {
 	if (number < 2)
@@ -234,14 +234,14 @@ int lowDivider(number, divider) {
 		return lowDivider(number, divider + 1);
 }
 /************************************************************************
-* function name: void xorWizard											*
-* The Input: none														*
-* The output: none (void), prints only									*
-* The Function operation: Recieves a number from user (through			*
-*						  scanf), checks how many smaller				*
-*						  numbers in xor with the number will produce	*
-*						  a larger number than the original one.		*
-*							Uses xorWizard(int,int,int) function.
+* function name: void xorWizard						*
+* The Input: none							*
+* The output: none (void), prints only					*
+* The Function operation: Recieves a number from user (through		*
+*			  scanf), checks how many smaller		*
+*			  numbers in xor with the number will produce	*
+*			  a larger number than the original one.	*
+*			  Uses xorWizard(int,int,int) function.		*
 *************************************************************************/
 void xorWizard() {
 	int numberXor;
@@ -251,12 +251,12 @@ void xorWizard() {
 	printf("A total of %d numbers \n", xorWizard(numberXor, 1, 0));
 }
 /************************************************************************
-* function name: int xorWizard											*
-* The Input: int nummber, int checkNumber, int amountOfNumbers			*
-* The output: int amount of numbers that satisfy the condition			*
+* function name: int xorWizard						*
+* The Input: int nummber, int checkNumber, int amountOfNumbers		*
+* The output: int amount of numbers that satisfy the condition		*
 * The Function operation: Recursive, inputs number, checks how many 	*
-*						  smaller numbers xored with the number will 	*
-*						  produce a larger number than the original one.*
+*			smaller numbers xored with the number will 	*
+*			produce a larger number than the original one.	*
 *************************************************************************/
 int xorWizard(number, checkNumber, amountOfNumbers) {
 	//checks if we finished checking all possible numbers smaller than the original one
@@ -276,14 +276,14 @@ int xorWizard(number, checkNumber, amountOfNumbers) {
 		return 0;
 }
 /************************************************************************************************
-* function name: void mission4																	*
-* The Input: none																				*
-* The output: none (void), prints only															*
-* The Function operation: Rock-Paper-Scissors-Lizard-Spock game.								*
-*						Recieves a number of rounds, initial shapes forAlice and Bob from user	* 
-*						(through scanf), checks	who wins in the game, prints all the rounds,	*
-*						the score and winner's name.											*
-*						Uses whoWins(int,int), aliceNext(int,int,int), bobNext(int,int) funcs.	*
+* function name: void mission4									*
+* The Input: none										*
+* The output: none (void), prints only								*
+* The Function operation: Rock-Paper-Scissors-Lizard-Spock game.				*
+*			Recieves a number of rounds, initial shapes forAlice and Bob from user	* 
+*			(through scanf), checks	who wins in the game, prints all the rounds,	*
+*			the score and winner's name.						*
+*			Uses whoWins(int,int), aliceNext(int,int,int), bobNext(int,int) funcs.	*
 ************************************************************************************************/
 void mission4() {
 	//Variables declaration & initialization after previous mission run
@@ -331,11 +331,11 @@ void mission4() {
 	}
 }
 /************************************************************************
-* function name: int whoWins											*
-* The Input: int bobShape, int aliceShape								*
-* The output: int number of the winner (1-ALICE, 2-BOB, 3-TIE)			*
-* The Function operation: Prints every round's shapes,					*
-*						   returns the winners serial number.			*
+* function name: int whoWins						*
+* The Input: int bobShape, int aliceShape				*
+* The output: int number of the winner (1-ALICE, 2-BOB, 3-TIE)		*
+* The Function operation: Prints every round's shapes,			*
+*			  returns the winners serial number.		*
 *************************************************************************/
 int whoWins(bobShape, aliceShape) {
 	switch (aliceShape) {
@@ -445,12 +445,12 @@ int whoWins(bobShape, aliceShape) {
 	}
 }
 /************************************************************************
-* function name: int aliceNext											*
-* The Input: int currentMove, int winnerName, int bobShape				*
-* The output: int next Alice's shape for the next round  				*
-* The Function operation: Returns Alice's shape for the next round		*
-*						   according to who won the current round,		*
-*						   what shape she used, and what shape Bob used.*
+* function name: int aliceNext						*
+* The Input: int currentMove, int winnerName, int bobShape		*
+* The output: int next Alice's shape for the next round  		*
+* The Function operation: Returns Alice's shape for the next round	*
+*			according to who won the current round,		*
+*			what shape she used, and what shape Bob used.	*
 *************************************************************************/
 int aliceNext(currentMove, winnerName, bobShape) {
 	switch (winnerName) {
@@ -504,12 +504,12 @@ int aliceNext(currentMove, winnerName, bobShape) {
 	}
 }
 /************************************************************************
-* function name: int bobNext											*
-* The Input: int currentMove, int winnerName							*
-* The output: int next Bobs's shape for the next round  				*
-* The Function operation: Returns Bob's shape for the next round		*
-*						   according to who won the current round,		*
-*						   what shape he used.							*
+* function name: int bobNext						*
+* The Input: int currentMove, int winnerName				*
+* The output: int next Bobs's shape for the next round  		*
+* The Function operation: Returns Bob's shape for the next round	*
+*			according to who won the current round,		*
+*			what shape he used.				*
 *************************************************************************/
 int bobNext(currentMove, winnerName) {
 	switch (currentMove) {
